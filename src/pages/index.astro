@@ -1,5 +1,5 @@
 ---
-
+import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -8,9 +8,43 @@
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<meta name="description" content="Shironeko Digital OÜ - IT consulting, software development, and VTubing projects based in Tallinn, Estonia." />
+		<title>Shironeko Digital</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="bg-white text-gray-900 min-h-screen flex flex-col">
+		<main class="flex-1 flex flex-col justify-center items-center px-6 py-16">
+			<div class="max-w-2xl w-full text-center">
+				<h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
+					Shironeko Digital
+				</h1>
+				
+				<p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">
+					IT consulting services, software development, and VTubing projects.
+				</p>
+
+				<div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+				<a 
+					href="mailto:hello@shironekodigital.com" 
+					class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
+				>
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+					</svg>
+					Get in touch
+				</a>
+				</div>
+			</div>
+		</main>
+
+		<footer class="border-t border-gray-200 py-12 px-6">
+			<div class="max-w-2xl mx-auto text-center text-sm text-gray-500 space-y-3">
+				<p>&copy; {new Date().getFullYear()} Shironeko Digital OÜ. All rights reserved.</p>
+				<p>
+					<a href="/impressum" class="hover:text-gray-900 transition-colors underline">
+						Impressum
+					</a>
+				</p>
+			</div>
+		</footer>
 	</body>
 </html>
