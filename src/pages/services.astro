@@ -1,0 +1,118 @@
+---
+import Layout from '../components/Layout.astro';
+
+const services = [
+	{
+		title: "Software Development",
+		description: "End-to-end development of custom software solutions designed to scale with your business.",
+		image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+		details: [
+			"Full-stack web applications (React, Svelte, Node.js)",
+			"Distributed Systems & Microservices",
+			"Video Engineering & Streaming",
+			"Mobile app development (iOS, Android, Cross-platform)",
+			"API design and development"
+		],
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>`
+	},
+	{
+		title: "Maintenance & Support",
+		description: "Ensuring your digital products remain secure, performant, and up-to-date.",
+		image: "https://images.unsplash.com/photo-1709547228697-fa1f424a3f39?auto=format&fit=crop&w=1200&q=80",
+		details: [
+			"DevOps & Infrastructure Automation",
+			"24/7 monitoring and performance optimization",
+			"Regular security audits and patching",
+			"Legacy system modernization",
+			"Cloud infrastructure management"
+		],
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75a4.5 4.5 0 0 1-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 1 1-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 0 1 6.336-4.486l-3.276 3.276a3.004 3.004 0 0 0 2.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75 4.5 4.5m0 0L1.5 7.5l3 3m0-6 3 3" /></svg>`
+	},
+	{
+		title: "Research & Development",
+		description: "Prototyping and building innovative solutions at the intersection of tech and creativity.",
+		image: "https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&fit=crop&w=1200&q=80",
+		details: [
+			"Artificial Intelligence and Machine Learning",
+			"Web Development",
+			"VTubing and virtual character tech"
+		],
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" /></svg>`
+	}
+];
+---
+
+<Layout title="Services" description="Detailed list of digital services provided by Shironeko Digital.">
+	<section class="pt-32 pb-24 bg-gray-50/50">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="max-w-3xl">
+				<h1 class="text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
+					Comprehensive solutions for <span class="text-gray-400">digital growth.</span>
+				</h1>
+				<p class="text-xl text-gray-500 leading-relaxed">
+					We provide a wide range of services designed to help businesses navigate the 
+					complexities of the modern digital landscape.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 bg-white">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="grid grid-cols-1 gap-16">
+				{services.map((service, index) => (
+					<div class={`flex flex-col md:flex-row gap-12 items-start ${index % 2 === 1 ? 'md:flex-row-reverse' : ''}`}>
+						<div class="flex-1 space-y-8">
+							<div class="size-16 rounded-2xl bg-gray-900 text-white flex items-center justify-center shadow-xl shadow-gray-200">
+								<div class="size-8 *:w-full *:h-full">
+									<Fragment set:html={service.icon} />
+								</div>
+							</div>
+							<div>
+								<h2 class="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
+								<p class="text-lg text-gray-500 leading-relaxed mb-8">{service.description}</p>
+								<ul class="space-y-4">
+									{service.details.map(detail => (
+										<li class="flex items-center gap-3 text-gray-600">
+											<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-4 text-gray-900">
+												<path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+											</svg>
+											{detail}
+										</li>
+									))}
+								</ul>
+							</div>
+						</div>
+						<div class="flex-1 w-full aspect-square md:aspect-auto md:self-stretch rounded-[2.5rem] bg-gray-50 border border-gray-100 overflow-hidden relative group">
+							<img 
+								src={service.image} 
+								alt={service.title} 
+								class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+							/>
+							<div class="absolute inset-0 bg-linear-to-br from-white/20 to-transparent"></div>
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-24 bg-gray-50/50">
+		<div class="max-w-6xl mx-auto px-6 text-center">
+			<div class="max-w-2xl mx-auto">
+				<h2 class="text-3xl font-bold text-gray-900 mb-6">Need a custom solution?</h2>
+				<p class="text-gray-500 mb-10 leading-relaxed">
+					Every project is unique. Let's discuss your specific requirements and 
+					how we can help you achieve your goals.
+				</p>
+				<a href="mailto:hello@shironekodigital.com" class="px-8 py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-all inline-flex items-center gap-3">
+					Talk to an Expert
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25 21 12m0 0-3.75 3.75M21 12H3" />
+					</svg>
+				</a>
+			</div>
+		</div>
+	</section>
+</Layout>

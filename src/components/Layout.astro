@@ -1,0 +1,31 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Shironeko Digital OÜ - IT consulting, software development, and VTubing projects." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title} | Shironeko Digital</title>
+	</head>
+	<body class="bg-white text-gray-900 min-h-screen flex flex-col antialiased">
+		<Header />
+		<main class="flex-1">
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

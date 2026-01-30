@@ -1,50 +1,139 @@
 ---
-import '../styles/global.css';
+import Layout from '../components/Layout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import SolutionCard from '../components/SolutionCard.astro';
+
+const services = [
+	{
+		title: "Software Development",
+		description: "High-quality, scalable applications tailored to your business needs using modern technologies.",
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>`
+	},
+	{
+		title: "AI & Machine Learning",
+		description: "Intelligent solutions that leverage data to automate processes and provide deep insights.",
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" /></svg>`
+	},
+	{
+		title: "Data Systems",
+		description: "Robust data architecture and pipelines designed for high performance and reliability.",
+		icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M20.25 6.375c0 2.278-3.694 4.125-8.25 4.125S3.75 8.653 3.75 6.375m16.5 0c0-2.278-3.694-4.125-8.25-4.125S3.75 4.097 3.75 6.375m16.5 0v11.25c0 2.278-3.694 4.125-8.25 4.125s-8.25-1.847-8.25-4.125V6.375m16.5 0v3.75m-16.5-3.75v3.75m16.5 0v3.75C20.25 16.153 16.556 18 12 18s-8.25-1.847-8.25-4.125v-3.75m16.5 0v3.75" /></svg>`
+	}
+];
+
+const solutions = [
+	{ title: "Web Development", description: "Custom web applications built with modern frameworks like React and Svelte." },
+	{ title: "Distributed Systems", description: "Scalable, resilient architectures designed for high-load environments." },
+	{ title: "Video Engineering", description: "Advanced streaming solutions and real-time video processing." },
+	{ title: "DevOps", description: "Infrastructure automation and optimized delivery pipelines." },
+	{ title: "AI Integration", description: "Seamlessly add AI capabilities to your existing workflows." },
+	{ title: "Mobile Apps", description: "Native and cross-platform mobile experiences." }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="description" content="Shironeko Digital OÜ - IT consulting, software development, and VTubing projects based in Tallinn, Estonia." />
-		<title>Shironeko Digital</title>
-	</head>
-	<body class="bg-white text-gray-900 min-h-screen flex flex-col">
-		<main class="flex-1 flex flex-col justify-center items-center px-6 py-16">
-			<div class="max-w-2xl w-full text-center">
-				<h1 class="text-4xl md:text-5xl font-semibold tracking-tight mb-6">
-					Shironeko Digital
+<Layout title="Digital Solutions">
+	<!-- Hero Section -->
+	<section class="relative pt-32 pb-24 overflow-hidden">
+		<div class="max-w-6xl mx-auto px-6 relative z-10">
+			<div class="max-w-3xl">
+				<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-50 border border-gray-100 mb-8">
+					<span class="relative flex h-2 w-2">
+						<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-gray-400 opacity-75"></span>
+						<span class="relative inline-flex rounded-full h-2 w-2 bg-gray-500"></span>
+					</span>
+					<span class="text-xs font-bold uppercase tracking-wider text-gray-500">Available for new projects</span>
+				</div>
+				<h1 class="text-6xl md:text-7xl font-bold tracking-tight text-gray-900 mb-8 leading-[1.1]">
+					Digital Solutions for the <span class="text-gray-400">Modern World.</span>
 				</h1>
-				
-				<p class="text-lg md:text-xl text-gray-600 mb-12 leading-relaxed">
-					IT consulting services, software development, and VTubing projects.
+				<p class="text-xl text-gray-500 mb-12 leading-relaxed max-w-2xl">
+					We partner with forward-thinking companies to build innovative software, 
+					leverage artificial intelligence, and create scalable digital experiences.
 				</p>
-
-				<div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-				<a 
-					href="mailto:hello@shironekodigital.com" 
-					class="inline-flex items-center justify-center gap-2 px-6 py-3 bg-gray-900 text-white font-medium rounded-lg hover:bg-gray-800 transition-colors"
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-					</svg>
-					Get in touch
-				</a>
+				<div class="flex flex-col sm:flex-row gap-4">
+					<a href="/services" class="px-8 py-4 bg-gray-900 text-white font-bold rounded-xl hover:bg-gray-800 transition-all text-center">
+						Explore Services
+					</a>
+					<a href="/portfolio" class="px-8 py-4 bg-white text-gray-900 border border-gray-200 font-bold rounded-xl hover:bg-gray-50 transition-all text-center">
+						View Portfolio
+					</a>
 				</div>
 			</div>
-		</main>
+		</div>
+		
+		<!-- Background Decoration -->
+		<div class="absolute top-0 right-0 -z-10 w-1/2 h-full bg-linear-to-bl from-gray-50 to-transparent opacity-50"></div>
+	</section>
 
-		<footer class="border-t border-gray-200 py-12 px-6">
-			<div class="max-w-2xl mx-auto text-center text-sm text-gray-500 space-y-3">
-				<p>&copy; {new Date().getFullYear()} Shironeko Digital OÜ. All rights reserved.</p>
-				<p>
-					<a href="/impressum" class="hover:text-gray-900 transition-colors underline">
-						Impressum
-					</a>
-				</p>
+	<!-- Services Section -->
+	<section class="py-24 bg-white">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+				<div class="max-w-2xl">
+					<h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Core Services</h2>
+					<h3 class="text-4xl font-bold text-gray-900 tracking-tight">Expertise that drives <span class="text-gray-400">results.</span></h3>
+				</div>
+				<a href="/services" class="text-sm font-bold text-gray-900 flex items-center gap-2 hover:gap-3 transition-all">
+					View All Services
+					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-4">
+						<path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+					</svg>
+				</a>
 			</div>
-		</footer>
-	</body>
-</html>
+			
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{services.map(service => (
+					<ServiceCard {...service} />
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- Solutions Grid -->
+	<section class="py-24 bg-gray-50/50">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="max-w-2xl mb-16">
+				<h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Our Focus</h2>
+				<h3 class="text-4xl font-bold text-gray-900 tracking-tight">Specialized solutions for <span class="text-gray-400">complex problems.</span></h3>
+			</div>
+			
+			<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+				{solutions.map(solution => (
+					<SolutionCard {...solution} />
+				))}
+				<div class="p-6 rounded-2xl border-2 border-dashed border-gray-200 flex flex-col justify-center items-center text-center group hover:border-gray-400 transition-colors cursor-pointer">
+					<p class="font-bold text-gray-900 mb-1">Your Vision</p>
+					<p class="text-sm text-gray-400">Let's build something unique</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Section -->
+	<section class="py-32">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="bg-gray-900 rounded-[3rem] p-12 md:p-20 text-center relative overflow-hidden">
+				<div class="relative z-10">
+					<h2 class="text-4xl md:text-5xl font-bold text-white mb-8 tracking-tight">
+						Ready to start your <span class="text-gray-400">next project?</span>
+					</h2>
+					<p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
+						Whether you have a fully formed idea or just the start of a concept, 
+						we're here to help you bring it to life.
+					</p>
+					<a href="mailto:hello@shironekodigital.com" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 font-bold rounded-xl hover:bg-gray-100 transition-all active:scale-[0.98]">
+						Get in touch
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+						</svg>
+					</a>
+				</div>
+				
+				<!-- Decoration -->
+				<div class="absolute top-0 left-0 w-full h-full z-0">
+					<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-[600px] bg-white/5 rounded-full blur-3xl"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>

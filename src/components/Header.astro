@@ -1,0 +1,29 @@
+---
+import logo from '../assets/logo.svg?raw';
+---
+
+<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+	<div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+		<a href="/" class="flex items-center gap-2 group">
+			<div class="size-10 text-gray-900 group-hover:scale-110 transition-transform duration-300">
+				<Fragment set:html={logo} />
+			</div>
+			<span class="text-xl font-bold tracking-tight">Shironeko Digital</span>
+		</a>
+
+		<nav class="hidden md:flex items-center gap-8">
+			<a href="/portfolio" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Portfolio</a>
+			<a href="/services" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Services</a>
+			<a href="/company" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Company</a>
+			<a href="mailto:hello@shironekodigital.com" class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-all active:scale-[0.98]">
+				Get in touch
+			</a>
+		</nav>
+
+		<button class="md:hidden p-2 text-gray-600">
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+			</svg>
+		</button>
+	</div>
+</header>

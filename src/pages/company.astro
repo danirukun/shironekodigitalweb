@@ -1,0 +1,90 @@
+---
+import Layout from '../components/Layout.astro';
+
+const companyInfo: { title: string; details: { label: string; value: string; link?: string }[] }[] = [
+	{
+		title: "Company Information",
+		details: [
+			{ label: "Name", value: "Shironeko Digital OÜ" },
+			{ label: "Address", value: "Sepapaja tn 6" },
+			{ label: "Location", value: "15551 Tallinn, Estonia" }
+		]
+	},
+	{
+		title: "Contact",
+		details: [
+			{ label: "Email", value: "hello@shironekodigital.com", link: "mailto:hello@shironekodigital.com" },
+			{ label: "Website", value: "shironekodigital.com", link: "/" }
+		]
+	},
+	{
+		title: "Registry Information",
+		details: [
+			{ label: "Registry Code", value: "17395577" },
+			{ label: "Jurisdiction", value: "Registered in Estonia" }
+		]
+	}
+];
+---
+
+<Layout title="Company" description="Legal information and contact details for Shironeko Digital OÜ.">
+	<section class="pt-32 pb-24 bg-gray-50/50">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="max-w-3xl">
+				<h1 class="text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
+					Company <span class="text-gray-400">Information.</span>
+				</h1>
+				<p class="text-xl text-gray-500 leading-relaxed">
+					Legal details and contact information for Shironeko Digital OÜ.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 bg-white">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+				{companyInfo.map(info => (
+					<div class="p-10 rounded-[2.5rem] border border-gray-100 bg-white shadow-sm">
+						<h2 class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-10">{info.title}</h2>
+						<div class="space-y-6">
+							{info.details.map(detail => (
+								<div>
+									<p class="text-xs font-bold text-gray-400 uppercase tracking-wider mb-1">{detail.label}</p>
+									{detail.link ? (
+										<a href={detail.link} class="text-lg font-bold text-gray-900 hover:text-gray-600 transition-colors">
+											{detail.value}
+										</a>
+									) : (
+										<p class="text-lg font-bold text-gray-900">{detail.value}</p>
+									)}
+								</div>
+							))}
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="py-24 border-t border-gray-100">
+		<div class="max-w-6xl mx-auto px-6">
+			<div class="prose prose-gray max-w-3xl">
+				<h2 class="text-3xl font-bold text-gray-900 mb-8 tracking-tight">Legal Disclaimer</h2>
+				<p class="text-gray-500 leading-relaxed mb-6">
+					The information provided on this website is for general informational purposes only. 
+					While we strive to keep the information up to date and correct, we make no representations 
+					or warranties of any kind, express or implied, about the completeness, accuracy, reliability, 
+					suitability, or availability with respect to the website or the information, products, 
+					services, or related graphics contained on the website for any purpose.
+				</p>
+				<p class="text-gray-500 leading-relaxed">
+					Any reliance you place on such information is therefore strictly at your own risk. 
+					In no event will we be liable for any loss or damage including without limitation, 
+					indirect or consequential loss or damage, or any loss or damage whatsoever arising from 
+					loss of data or profits arising out of, or in connection with, the use of this website.
+				</p>
+			</div>
+		</div>
+	</section>
+</Layout>
