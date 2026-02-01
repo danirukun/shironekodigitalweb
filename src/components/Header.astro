@@ -33,55 +33,61 @@ import logo from '../assets/logo.svg?raw';
 			</svg>
 		</button>
 	</div>
-
-	<div
-		id="mobile-menu"
-		class="md:hidden fixed inset-0 z-[60] hidden"
-		aria-hidden="true"
-		data-mobile-menu
-	>
-		<div class="absolute inset-0 bg-gray-900/40" data-mobile-menu-overlay></div>
-		<div class="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-6 flex flex-col gap-6">
-			<div class="flex items-center justify-between">
-				<span class="text-sm font-semibold tracking-wide text-gray-500">Menu</span>
-				<button
-					class="rounded-full p-2 text-gray-600 hover:bg-gray-100"
-					type="button"
-					aria-label="Close menu"
-					data-mobile-menu-close
-				>
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-						<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-					</svg>
-				</button>
-			</div>
-
-			<nav class="flex flex-col gap-4 text-base font-medium">
-				<a href="/portfolio" class="text-gray-700 hover:text-gray-900 transition-colors">Portfolio</a>
-				<a href="/services" class="text-gray-700 hover:text-gray-900 transition-colors">Services</a>
-				<a href="/company" class="text-gray-700 hover:text-gray-900 transition-colors">Company</a>
-				<a href="mailto:hello@shironekodigital.com" class="mt-2 inline-flex items-center justify-center rounded-full bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gray-800 transition-all active:scale-[0.98]">
-					Get in touch
-				</a>
-			</nav>
-		</div>
-	</div>
 </header>
 
-<script lang="ts">
-	const menu = document.querySelector<HTMLElement>('[data-mobile-menu]');
-	const openButton = document.querySelector<HTMLButtonElement>('[data-mobile-menu-button]');
-	const closeButton = document.querySelector<HTMLButtonElement>('[data-mobile-menu-close]');
-	const overlay = document.querySelector<HTMLDivElement>('[data-mobile-menu-overlay]');
+<div
+	id="mobile-menu"
+	class="md:hidden fixed inset-0 z-[60]"
+	aria-hidden="true"
+	data-mobile-menu
+	hidden
+>
+	<div class="absolute inset-0 bg-gray-900/40" data-mobile-menu-overlay></div>
+	<div class="absolute right-0 top-0 h-full w-72 bg-white shadow-xl p-6 flex flex-col gap-6">
+		<div class="flex items-center justify-between">
+			<span class="text-sm font-semibold tracking-wide text-gray-500">Menu</span>
+			<button
+				class="rounded-full p-2 text-gray-600 hover:bg-gray-100"
+				type="button"
+				aria-label="Close menu"
+				data-mobile-menu-close
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+				</svg>
+			</button>
+		</div>
 
-	if (menu && openButton && closeButton && overlay) {
+		<nav class="flex flex-col gap-4 text-base font-medium">
+			<a href="/portfolio" class="text-gray-700 hover:text-gray-900 transition-colors">Portfolio</a>
+			<a href="/services" class="text-gray-700 hover:text-gray-900 transition-colors">Services</a>
+			<a href="/company" class="text-gray-700 hover:text-gray-900 transition-colors">Company</a>
+			<a href="mailto:hello@shironekodigital.com" class="mt-2 inline-flex items-center justify-center rounded-full bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white hover:bg-gray-800 transition-all active:scale-[0.98]">
+				Get in touch
+			</a>
+		</nav>
+	</div>
+</div>
+
+<script lang="ts">
+	const initMenu = () => {
+		const menu = document.querySelector<HTMLElement>('[data-mobile-menu]');
+		const openButton = document.querySelector<HTMLButtonElement>('[data-mobile-menu-button]');
+		const closeButton = document.querySelector<HTMLButtonElement>('[data-mobile-menu-close]');
+		const overlay = document.querySelector<HTMLDivElement>('[data-mobile-menu-overlay]');
+
+		if (!menu || !openButton || !closeButton || !overlay) {
+			return;
+		}
+
 		const setOpen = (isOpen: boolean) => {
-			menu.classList.toggle('hidden', !isOpen);
+			menu.hidden = !isOpen;
 			menu.setAttribute('aria-hidden', isOpen ? 'false' : 'true');
 			openButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-			document.body.classList.toggle('overflow-hidden', isOpen);
+			document.body.style.overflow = isOpen ? 'hidden' : '';
 		};
 
+		setOpen(false);
 		openButton.addEventListener('click', () => setOpen(true));
 		closeButton.addEventListener('click', () => setOpen(false));
 		overlay.addEventListener('click', () => setOpen(false));
@@ -90,5 +96,11 @@ import logo from '../assets/logo.svg?raw';
 				setOpen(false);
 			}
 		});
+	};
+
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', initMenu, { once: true });
+	} else {
+		initMenu();
 	}
 </script>
