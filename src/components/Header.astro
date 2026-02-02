@@ -20,10 +20,38 @@ import logo from '../assets/logo.svg?raw';
 			</a>
 		</nav>
 
-		<button class="md:hidden p-2 text-gray-600">
-			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+		<button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+			<svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+			</svg>
+			<svg id="close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 hidden">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
 			</svg>
 		</button>
 	</div>
+
+	<nav id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
+		<div class="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-4">
+			<a href="/portfolio" class="text-base font-medium text-gray-600 hover:text-gray-900 transition-colors py-2">Portfolio</a>
+			<a href="/services" class="text-base font-medium text-gray-600 hover:text-gray-900 transition-colors py-2">Services</a>
+			<a href="/company" class="text-base font-medium text-gray-600 hover:text-gray-900 transition-colors py-2">Company</a>
+			<a href="mailto:hello@shironekodigital.com" class="mt-2 px-5 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-all text-center">
+				Get in touch
+			</a>
+		</div>
+	</nav>
 </header>
+
+<script>
+	const menuToggle = document.getElementById('menu-toggle');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const menuIcon = document.getElementById('menu-icon');
+	const closeIcon = document.getElementById('close-icon');
+
+	menuToggle?.addEventListener('click', () => {
+		const isOpen = mobileMenu?.classList.toggle('hidden') === false;
+		menuToggle.setAttribute('aria-expanded', String(isOpen));
+		menuIcon?.classList.toggle('hidden', isOpen);
+		closeIcon?.classList.toggle('hidden', !isOpen);
+	});
+</script>
