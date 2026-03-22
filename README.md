@@ -1,43 +1,30 @@
-# Astro Starter Kit: Minimal
+# Shironeko Digital (Astro)
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Commands
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+| Command | Action |
+| --- | --- |
+| `pnpm install` | Install dependencies |
+| `pnpm dev` | Dev server at `http://localhost:4321` |
+| `pnpm build` | Production build to `dist/` |
+| `pnpm preview` | Preview the production build |
 
-## 🚀 Project Structure
+## Sanity CMS
 
-Inside of your Astro project, you'll see the following folders and files:
+- **Project ID:** `m4iidr52` · **Dataset:** `production` · **Org ID:** `oKUpUxLlC`
+- **Embedded Studio:** `/admin` (hash-based router so the site stays a static build; Studio uses client-side routing under that path.)
+- **Schema:** defined in [`sanity.config.ts`](sanity.config.ts) and [`src/sanity/schemaTypes/`](src/sanity/schemaTypes/).
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+### First-time setup
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+1. **CORS:** In [Sanity manage](https://www.sanity.io/manage) → API → CORS origins, add `http://localhost:4321` and your production site origin.
+2. **Studio:** Run `pnpm dev` and open **http://localhost:4321/admin** — sign in with your Sanity account. The schema is loaded from this repo’s `sanity.config.ts` (no separate schema upload step for standard Studio).
+3. **Seed the ClubCast portfolio document** (optional; requires a token with write access for the HTTP API):
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+   ```sh
+   cp .env.example .env
+   # set SANITY_API_WRITE_TOKEN in .env, then:
+   export $(grep -v '^#' .env | xargs) && pnpm seed:clubcast
+   ```
 
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+The portfolio page reads `portfolioProject` documents from Sanity; until you deploy the schema and seed (or create content in Studio), `/portfolio` may list no projects.

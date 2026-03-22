@@ -1,17 +1,32 @@
 ---
+import { createImageUrlBuilder } from '@sanity/image-url';
+import { sanityClient } from 'sanity:client';
 import Layout from '../components/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
+import { portfolioProjectsQuery } from '../sanity/queries';
 
-const projects = [
-	{
-		title: "ClubCast.tv",
-		description: "A comprehensive streaming and community platform designed for creators and their audiences. Built with scalability and real-time interaction at its core.",
-		tags: ["Streaming", "Web Platform", "Community", "Real-time"],
-		image: undefined // Placeholder will be used
-	}
-];
+const builder = createImageUrlBuilder(sanityClient);
+
+type PortfolioRow = {
+	_id: string;
+	title: string;
+	slug: string;
+	description: string;
+	tags: string[] | null;
+	projectUrl?: string | null;
+	image?: unknown;
+};
+
+const rows = await sanityClient.fetch<PortfolioRow[]>(portfolioProjectsQuery);
+
+const projects = rows.map((row) => ({
+	title: row.title,
+	description: row.description,
+	tags: row.tags ?? [],
+	projectUrl: row.projectUrl ?? undefined,
+	image: row.image ? builder.image(row.image).width(1200).url() : undefined,
+}));
 ---
-
 <Layout title="Portfolio" description="Showcase of projects and digital solutions built by Shironeko Digital.">
 	<section class="pt-32 pb-24 bg-gray-50/50">
 		<div class="max-w-6xl mx-auto px-6">
@@ -30,7 +45,7 @@ const projects = [
 	<section class="py-24 bg-white">
 		<div class="max-w-6xl mx-auto px-6">
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-				{projects.map(project => (
+				{projects.map((project) => (
 					<ProjectCard {...project} />
 				))}
 				
