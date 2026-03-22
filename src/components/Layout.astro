@@ -6,20 +6,72 @@ import '../styles/global.css';
 interface Props {
 	title: string;
 	description?: string;
+	ogImage?: string;
+	canonicalPath?: string;
+	noindex?: boolean;
 }
 
-const { title, description = "Shironeko Digital OÜ - IT consulting, software development, and VTubing projects." } = Astro.props;
+const {
+	title,
+	description = 'Shironeko Digital OÜ - IT consulting, software development, and VTubing projects.',
+	ogImage,
+	canonicalPath,
+	noindex = false,
+} = Astro.props;
+
+const siteBase = Astro.site ?? Astro.url;
+const pathForCanonical = canonicalPath ?? Astro.url.pathname;
+const canonicalHref = new URL(pathForCanonical, siteBase).href;
+const pageTitle = `${title} | Shironeko Digital`;
+
+const resolveOgImage = (): string => {
+	if (ogImage?.startsWith('http')) return ogImage;
+	if (ogImage) return new URL(ogImage.startsWith('/') ? ogImage : `/${ogImage}`, siteBase).href;
+	return new URL('/og-default.png', siteBase).href;
+};
+
+const ogImageUrl = resolveOgImage();
+
+const organization = {
+	'@context': 'https://schema.org',
+	'@type': 'Organization',
+	'@id': `${new URL('/', siteBase).origin}/#organization`,
+	name: 'Shironeko Digital OÜ',
+	url: new URL('/', siteBase).origin,
+	logo: new URL('/favicon.svg', siteBase).href,
+	email: 'hello@shironekodigital.com',
+	address: {
+		'@type': 'PostalAddress',
+		streetAddress: 'Sepapaja tn 6',
+		addressLocality: 'Tallinn',
+		postalCode: '15551',
+		addressCountry: 'EE',
+	},
+};
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="description" content={description} />
-		<title>{title} | Shironeko Digital</title>
+		<title>{pageTitle}</title>
+		<link rel="canonical" href={canonicalHref} />
+		{noindex && <meta name="robots" content="noindex, nofollow" />}
+		<meta property="og:title" content={pageTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalHref} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Shironeko Digital" />
+		<meta property="og:image" content={ogImageUrl} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImageUrl} />
+		<script type="application/ld+json" set:html={JSON.stringify(organization)}></script>
 	</head>
 	<body class="bg-white text-gray-900 min-h-screen flex flex-col antialiased">
 		<Header />
