@@ -1,0 +1,60 @@
+---
+interface Props {
+	num: string;
+	title: string;
+	description: string;
+	align: 'left' | 'right';
+	details?: string[];
+	/** Stagger scroll reveal with siblings (home / services). */
+	revealIndex?: number;
+}
+
+const { num, title, description, align, details, revealIndex } = Astro.props;
+const revealMode = align === 'left' ? 'right' : 'left';
+const revealDelay = String(Math.min((revealIndex ?? 0) * 0.06, 0.42));
+---
+
+<div
+	data-reveal={revealMode}
+	data-reveal-delay={revealDelay}
+	class:list={[
+		'flex gap-10 md:gap-12 py-8 md:py-10 border-b border-zinc-200 last:border-0',
+		align === 'left' && 'flex-row md:pl-20',
+		align === 'right' && 'flex-row justify-between items-start gap-8',
+	]}
+>
+	{
+		align === 'left' && (
+			<span class="font-mono-ui text-[13px] text-zinc-500 tracking-[0.15em] shrink-0 tabular-nums pt-1">
+				{num}
+			</span>
+		)
+	}
+	<div class:list={['min-w-0 space-y-2', align === 'right' && 'flex-1']}>
+		<h3 class="font-display text-2xl md:text-[30px] text-zinc-950 leading-tight tracking-tight">
+			{title}
+		</h3>
+		<p class="text-zinc-600 text-[15px] leading-[1.55] max-w-2xl">
+			{description}
+		</p>
+		{
+			details && details.length > 0 && (
+				<ul class="mt-5 space-y-2.5 max-w-2xl">
+					{details.map((line) => (
+						<li class="text-zinc-600 text-[14px] leading-relaxed flex gap-3">
+							<span class="font-mono-ui text-zinc-400 shrink-0">—</span>
+							<span>{line}</span>
+						</li>
+					))}
+				</ul>
+			)
+		}
+	</div>
+	{
+		align === 'right' && (
+			<span class="font-mono-ui text-[13px] text-zinc-500 tracking-[0.15em] shrink-0 tabular-nums pt-1">
+				{num}
+			</span>
+		)
+	}
+</div>

@@ -1,10 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600;700&display=swap");
+
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @theme {
-  --font-sans: 'Inter', sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Anton", ui-sans-serif, system-ui, sans-serif;
+  --font-mono-ui: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-surface: #fafafa;
+  --color-surface-raised: #f4f4f5;
+  --color-fg: #09090b;
+  --color-fg-muted: #52525b;
+  --color-hairline: #e4e4e7;
 }
 
 html {
   font-family: var(--font-sans);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-ui {
+  font-family: var(--font-mono-ui);
 }

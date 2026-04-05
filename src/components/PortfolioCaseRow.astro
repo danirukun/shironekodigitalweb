@@ -1,0 +1,75 @@
+---
+interface Props {
+	title: string;
+	description: string;
+	tags: string[];
+	image?: string;
+	projectUrl?: string;
+	reverse?: boolean;
+	revealIndex?: number;
+}
+
+const { title, description, tags, image, projectUrl, reverse = false, revealIndex } = Astro.props;
+const revealFly = reverse ? 'left' : 'right';
+const revealDelay = String(Math.min((revealIndex ?? 0) * 0.07, 0.35));
+const href = projectUrl?.trim() || '#';
+const hasLink = href !== '#';
+const tagLine = tags.filter(Boolean).join(' · ');
+---
+
+<article
+	data-reveal={revealFly}
+	data-reveal-delay={revealDelay}
+	data-reveal-duration="0.8"
+	class:list={[
+		'flex flex-col gap-8 py-12 md:py-14 border-b border-zinc-200 last:border-0 md:flex-row md:items-start md:gap-10',
+		reverse && 'md:flex-row-reverse',
+	]}
+>
+	{
+		hasLink ? (
+			<a
+				href={href}
+				class="shrink-0 block w-full md:w-72 aspect-video overflow-hidden bg-zinc-100 border border-zinc-200"
+				aria-label={image ? `Open project: ${title}` : `Project: ${title}`}
+			>
+				{image ? (
+					<img src={image} alt="" class="size-full object-cover transition-transform duration-500 hover:scale-[1.02]" />
+				) : (
+					<div class="size-full flex items-center justify-center text-zinc-300">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-14">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+						</svg>
+					</div>
+				)}
+			</a>
+		) : (
+			<div class="shrink-0 block w-full md:w-72 aspect-video overflow-hidden bg-zinc-100 border border-zinc-200">
+				{image ? (
+					<img src={image} alt="" class="size-full object-cover" />
+				) : (
+					<div class="size-full flex items-center justify-center text-zinc-300">
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" class="size-14">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+						</svg>
+					</div>
+				)}
+			</div>
+		)
+	}
+	<div class="min-w-0 flex-1 space-y-3">
+		<h2 class="font-display text-2xl md:text-[28px] text-zinc-950 leading-tight tracking-tight">
+			{
+				hasLink ? (
+					<a href={href} class="hover:underline underline-offset-4 decoration-zinc-300">
+						{title}
+					</a>
+				) : (
+					title
+				)
+			}
+		</h2>
+		<p class="text-zinc-600 text-[15px] leading-[1.55] max-w-2xl">{description}</p>
+		{tagLine && <p class="font-mono-ui text-xs text-zinc-500 tracking-wide">{tagLine}</p>}
+	</div>
+</article>

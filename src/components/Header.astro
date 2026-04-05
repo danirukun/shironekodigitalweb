@@ -2,26 +2,47 @@
 import logo from '../assets/logo.svg?raw';
 ---
 
-<header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
-	<div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-		<a href="/" class="flex items-center gap-2 group">
+<header class="sticky top-0 z-50 border-b border-zinc-200 bg-white/85 backdrop-blur-md">
+	<div class="max-w-7xl mx-auto px-6 md:px-12 h-16 md:h-20 flex items-center justify-between">
+		<a href="/" class="flex items-center gap-3 group" aria-label="Shironeko Digital home">
 			<div
-				class="size-10 text-gray-900 group-hover:scale-110 transition-transform duration-300"
+				class="size-9 md:size-10 text-zinc-900 group-hover:scale-105 transition-transform duration-300"
 				set:html={logo}
 			></div>
-			<span class="text-xl font-bold tracking-tight">Shironeko Digital</span>
+			<span class="font-mono-ui text-[11px] md:text-xs tracking-[0.2em] uppercase text-zinc-900 font-medium">
+				Shironeko Digital
+			</span>
 		</a>
 
-		<nav class="hidden md:flex items-center gap-8">
-			<a href="/portfolio" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Portfolio</a>
-			<a href="/services" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Services</a>
-			<a href="/company" class="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors">Company</a>
-			<a href="mailto:hello@shironekodigital.com" class="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-all active:scale-[0.98]">
-				Get in touch
-			</a>
+		<nav class="hidden md:flex items-center gap-10" aria-label="Primary">
+			<a
+				href="/portfolio"
+				class="font-mono-ui text-[11px] tracking-[0.15em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors"
+				>Portfolio</a
+			>
+			<a
+				href="/services"
+				class="font-mono-ui text-[11px] tracking-[0.15em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors"
+				>Services</a
+			>
+			<a
+				href="/company"
+				class="font-mono-ui text-[11px] tracking-[0.15em] uppercase text-zinc-500 hover:text-zinc-900 transition-colors"
+				>Company</a
+			>
+			<a
+				href="mailto:hello@shironekodigital.com"
+				class="font-mono-ui text-[11px] tracking-[0.15em] uppercase text-zinc-900 border border-zinc-900 px-4 py-2 hover:bg-zinc-900 hover:text-white transition-colors"
+				>Contact</a
+			>
 		</nav>
 
-		<button id="menu-toggle" class="md:hidden p-2 text-gray-600 hover:text-gray-900 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+		<button
+			id="menu-toggle"
+			class="md:hidden p-2 text-zinc-600 hover:text-zinc-900 transition-colors"
+			aria-label="Toggle menu"
+			aria-expanded="false"
+		>
 			<svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
 				<path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
 			</svg>
@@ -31,14 +52,16 @@ import logo from '../assets/logo.svg?raw';
 		</button>
 	</div>
 
-	<nav id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
-		<div class="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-4">
-			<a href="/portfolio" class="text-base font-medium text-gray-600 hover:text-gray-900 transition-colors py-2">Portfolio</a>
-			<a href="/services" class="text-base font-medium text-gray-600 hover:text-gray-900 transition-colors py-2">Services</a>
-			<a href="/company" class="text-base font-medium text-gray-600 hover:text-gray-900 transition-colors py-2">Company</a>
-			<a href="mailto:hello@shironekodigital.com" class="mt-2 px-5 py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-all text-center">
-				Get in touch
-			</a>
+	<nav id="mobile-menu" class="md:hidden hidden border-t border-zinc-200 bg-white/95 backdrop-blur-md">
+		<div class="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-1">
+			<a href="/portfolio" class="font-mono-ui text-xs tracking-[0.15em] uppercase text-zinc-600 hover:text-zinc-900 py-3">Portfolio</a>
+			<a href="/services" class="font-mono-ui text-xs tracking-[0.15em] uppercase text-zinc-600 hover:text-zinc-900 py-3">Services</a>
+			<a href="/company" class="font-mono-ui text-xs tracking-[0.15em] uppercase text-zinc-600 hover:text-zinc-900 py-3">Company</a>
+			<a
+				href="mailto:hello@shironekodigital.com"
+				class="mt-3 font-mono-ui text-xs tracking-[0.15em] uppercase text-center border border-zinc-900 text-zinc-900 py-3 hover:bg-zinc-900 hover:text-white transition-colors"
+				>Contact</a
+			>
 		</div>
 	</nav>
 </header>

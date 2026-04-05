@@ -73,11 +73,15 @@ const organization = {
 		<meta name="twitter:image" content={ogImageUrl} />
 		<script type="application/ld+json" set:html={JSON.stringify(organization)}></script>
 	</head>
-	<body class="bg-white text-gray-900 min-h-screen flex flex-col antialiased">
+	<body class="min-h-screen flex flex-col antialiased bg-zinc-50 text-zinc-950">
 		<Header />
 		<main class="flex-1">
 			<slot />
 		</main>
 		<Footer />
+		<script>
+			import { initScrollReveal } from '../scripts/scrollReveal';
+			initScrollReveal();
+		</script>
 	</body>
 </html>

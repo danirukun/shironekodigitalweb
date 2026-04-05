@@ -1,0 +1,1057 @@
+{
+  "version": "2.10",
+  "children": [
+    {
+      "type": "frame",
+      "id": "UqhTV",
+      "x": 0,
+      "y": 0,
+      "name": "Shironeko — redesign v1",
+      "width": 1440,
+      "fill": "$surface",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "UbOIH",
+          "name": "hero",
+          "clip": true,
+          "width": "fill_container",
+          "height": 580,
+          "fill": {
+            "type": "image",
+            "enabled": true,
+            "url": "./images/generated-1775395309948.png",
+            "mode": "fill"
+          },
+          "layout": "none",
+          "children": [
+            {
+              "type": "frame",
+              "id": "f7jfz",
+              "x": 0,
+              "y": 0,
+              "name": "shade",
+              "width": 1440,
+              "height": 580,
+              "fill": {
+                "type": "gradient",
+                "gradientType": "linear",
+                "enabled": true,
+                "rotation": 180,
+                "size": {
+                  "height": 1
+                },
+                "colors": [
+                  {
+                    "color": "#00000000",
+                    "position": 0
+                  },
+                  {
+                    "color": "#0A0A0ACC",
+                    "position": 0.5
+                  },
+                  {
+                    "color": "#0A0A0AFF",
+                    "position": 1
+                  }
+                ]
+              }
+            },
+            {
+              "type": "frame",
+              "id": "cyFYu",
+              "x": 0,
+              "y": 0,
+              "name": "shell",
+              "width": 1440,
+              "height": 580,
+              "layout": "vertical",
+              "gap": 32,
+              "padding": [
+                40,
+                80,
+                48,
+                80
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "fzfb9",
+                  "name": "nav",
+                  "width": "fill_container",
+                  "justifyContent": "space_between",
+                  "alignItems": "center",
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "3KQfB",
+                      "name": "mark",
+                      "fill": "$fg_muted",
+                      "content": "SHIRONEKO DIGITAL",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "normal",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "text",
+                      "id": "QppV5",
+                      "name": "menu",
+                      "fill": "$fg_muted",
+                      "content": "Work   Services   Contact",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "normal",
+                      "letterSpacing": 2
+                    }
+                  ]
+                },
+                {
+                  "type": "frame",
+                  "id": "EAJsF",
+                  "width": "fill_container",
+                  "gap": 64,
+                  "justifyContent": "space_between",
+                  "alignItems": "end",
+                  "children": [
+                    {
+                      "type": "frame",
+                      "id": "I9tYn",
+                      "width": "fill_container",
+                      "layout": "vertical",
+                      "gap": 18,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "sS7Le",
+                          "fill": "$fg_muted",
+                          "content": "Creators · VTubers · broadcast teams",
+                          "fontFamily": "IBM Plex Mono",
+                          "fontSize": 12,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1.5
+                        },
+                        {
+                          "type": "text",
+                          "id": "ofwl6",
+                          "fill": "$fg",
+                          "textGrowth": "fixed-width",
+                          "width": 780,
+                          "content": "Delivering perfection at every level.",
+                          "lineHeight": 0.92,
+                          "fontFamily": "Anton",
+                          "fontSize": 74,
+                          "fontWeight": "normal"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "frame",
+                      "id": "FJArp",
+                      "width": 400,
+                      "layout": "vertical",
+                      "gap": 20,
+                      "children": [
+                        {
+                          "type": "text",
+                          "id": "W7Pku",
+                          "fill": "$fg_muted",
+                          "textGrowth": "fixed-width",
+                          "width": 400,
+                          "content": "Creating software that people love—utilities, platforms, and live stacks for talent who can’t afford a rough edge when they’re on air.",
+                          "lineHeight": 1.55,
+                          "fontFamily": "Geist",
+                          "fontSize": 15,
+                          "fontWeight": "normal"
+                        },
+                        {
+                          "type": "rectangle",
+                          "id": "AySE3",
+                          "fill": "$hairline",
+                          "width": 96,
+                          "height": 1
+                        },
+                        {
+                          "type": "text",
+                          "id": "SBla7",
+                          "fill": "$fg",
+                          "content": "Start with the messy brief →",
+                          "fontFamily": "IBM Plex Mono",
+                          "fontSize": 13,
+                          "fontWeight": "normal",
+                          "letterSpacing": 1
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "3pPwX",
+          "width": "fill_container",
+          "fill": "$surface_raised",
+          "gap": 56,
+          "padding": [
+            88,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "N0ysz",
+              "width": 220,
+              "layout": "vertical",
+              "gap": 20,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "xBu9k",
+                  "fill": "$fg_muted",
+                  "content": "HOW WE WORK",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 11,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "4iqVb",
+                  "fill": "#FFFFFF14",
+                  "content": "—",
+                  "lineHeight": 0.75,
+                  "fontFamily": "Anton",
+                  "fontSize": 96,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "FqROj",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 22,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "w6QYz",
+                  "fill": "$fg",
+                  "textGrowth": "fixed-width",
+                  "width": 920,
+                  "content": "Make the fragile parts boring.",
+                  "lineHeight": 1.05,
+                  "fontFamily": "Anton",
+                  "fontSize": 44,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "YkAdp",
+                  "fill": "$fg_muted",
+                  "textGrowth": "fixed-width",
+                  "width": 580,
+                  "content": "Codecs, capture cards, chat velocity, and the one engineer who knows why OBS is wrong tonight—we plan for that reality.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "B5mh9",
+          "name": "work",
+          "width": "fill_container",
+          "fill": "$surface",
+          "layout": "vertical",
+          "gap": 8,
+          "padding": [
+            72,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "uxxoD",
+              "width": "fill_container",
+              "padding": [
+                0,
+                0,
+                48,
+                0
+              ],
+              "justifyContent": "space_between",
+              "alignItems": "end",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "O69Nc",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 12,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "DsM7C",
+                      "fill": "$fg_muted",
+                      "content": "CAPABILITIES",
+                      "fontFamily": "IBM Plex Mono",
+                      "fontSize": 11,
+                      "fontWeight": "normal",
+                      "letterSpacing": 3
+                    },
+                    {
+                      "type": "text",
+                      "id": "zYDbS",
+                      "fill": "$fg",
+                      "content": "What we actually do",
+                      "fontFamily": "Anton",
+                      "fontSize": 34,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "rectangle",
+                  "id": "XcYXw",
+                  "fill": "$hairline",
+                  "width": 1,
+                  "height": 96
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "iRccP",
+              "name": "r1",
+              "width": "fill_container",
+              "gap": 48,
+              "padding": [
+                32,
+                0,
+                32,
+                80
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "Da5w9",
+                  "name": "n1",
+                  "fill": "$fg_muted",
+                  "content": "01",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "Yp2wU",
+                  "name": "c1",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "nPZTm",
+                      "name": "t1",
+                      "fill": "$fg",
+                      "textGrowth": "fixed-width",
+                      "width": 900,
+                      "content": "Web development",
+                      "fontFamily": "Anton",
+                      "fontSize": 30,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "r7RMb",
+                      "name": "d1",
+                      "fill": "$fg_muted",
+                      "textGrowth": "fixed-width",
+                      "width": 820,
+                      "content": "Product sites, marketing surfaces, and internal tools—typed, tested, and fast enough that your creators never wait on the CMS.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "Geist",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "qf31t",
+              "width": "fill_container",
+              "gap": 48,
+              "padding": [
+                28,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "RW6vZ",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "ySRR6",
+                      "fill": "$fg",
+                      "textGrowth": "fixed-width",
+                      "width": 900,
+                      "content": "Platform development",
+                      "fontFamily": "Anton",
+                      "fontSize": 30,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "S23me",
+                      "fill": "$fg_muted",
+                      "textGrowth": "fixed-width",
+                      "width": 820,
+                      "content": "Live streaming stacks, admin panels, entitlement and moderation, ingest and egress, and hardware glue—built for peak concurrents.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "Geist",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Lebxh",
+                  "fill": "$fg_muted",
+                  "content": "02",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "X8MXL",
+              "name": "r3",
+              "width": "fill_container",
+              "gap": 48,
+              "padding": [
+                32,
+                0,
+                32,
+                80
+              ],
+              "children": [
+                {
+                  "type": "text",
+                  "id": "WwuR4",
+                  "name": "n3",
+                  "fill": "$fg_muted",
+                  "content": "03",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                },
+                {
+                  "type": "frame",
+                  "id": "Vzg8h",
+                  "name": "c3",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "FuGfb",
+                      "name": "t3",
+                      "fill": "$fg",
+                      "textGrowth": "fixed-width",
+                      "width": 900,
+                      "content": "AR / XR development",
+                      "fontFamily": "Anton",
+                      "fontSize": 30,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "5CMWm",
+                      "name": "d3",
+                      "fill": "$fg_muted",
+                      "textGrowth": "fixed-width",
+                      "width": 820,
+                      "content": "Spatial prototypes and shipped layers—tracking, occlusion, and performance budgets that still work when the room is messy and the Wi‑Fi isn't.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "Geist",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "BtB8b",
+              "width": "fill_container",
+              "gap": 48,
+              "padding": [
+                28,
+                0
+              ],
+              "justifyContent": "space_between",
+              "children": [
+                {
+                  "type": "frame",
+                  "id": "ekYdY",
+                  "width": "fill_container",
+                  "layout": "vertical",
+                  "gap": 10,
+                  "children": [
+                    {
+                      "type": "text",
+                      "id": "bTLNB",
+                      "fill": "$fg",
+                      "textGrowth": "fixed-width",
+                      "width": 900,
+                      "content": "Creator & VTuber tools",
+                      "fontFamily": "Anton",
+                      "fontSize": 30,
+                      "fontWeight": "normal"
+                    },
+                    {
+                      "type": "text",
+                      "id": "tx1fK",
+                      "fill": "$fg_muted",
+                      "textGrowth": "fixed-width",
+                      "width": 820,
+                      "content": "Custom panels, overlays, asset helpers, and workflow glue—opinionated around streaming ergonomics, not generic dashboards.",
+                      "lineHeight": 1.55,
+                      "fontFamily": "Geist",
+                      "fontSize": 15,
+                      "fontWeight": "normal"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "id": "Ni5ZM",
+                  "fill": "$fg_muted",
+                  "content": "06",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 13,
+                  "fontWeight": "normal",
+                  "letterSpacing": 2
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "k1ebH",
+          "width": "fill_container",
+          "fill": "$surface_raised",
+          "gap": 48,
+          "padding": [
+            72,
+            80
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "7hOFB",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 16,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "I4a0p",
+                  "fill": "$fg_muted",
+                  "content": "NEXT STEP",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 11,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "uqAWQ",
+                  "fill": "$fg",
+                  "textGrowth": "fixed-width",
+                  "width": 520,
+                  "content": "Send a messy brief. We’ll reply with a concrete cut plan.",
+                  "lineHeight": 1.35,
+                  "fontFamily": "Geist",
+                  "fontSize": 22,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "b1Y9j",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "rectangle",
+                  "id": "g8drn",
+                  "fill": "$hairline",
+                  "width": 120,
+                  "height": 1
+                },
+                {
+                  "type": "text",
+                  "id": "5QtqT",
+                  "fill": "$fg",
+                  "content": "hello@example.com   ·   Calendar link (placeholder)",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "frame",
+      "id": "ieTHy",
+      "x": 1540,
+      "y": 0,
+      "name": "Work — redesign v1",
+      "width": 1440,
+      "fill": "$surface",
+      "layout": "vertical",
+      "children": [
+        {
+          "type": "frame",
+          "id": "cyb76",
+          "name": "top",
+          "width": "fill_container",
+          "padding": [
+            40,
+            80
+          ],
+          "justifyContent": "space_between",
+          "alignItems": "center",
+          "children": [
+            {
+              "type": "text",
+              "id": "ANmJF",
+              "name": "wm",
+              "fill": "$fg_muted",
+              "content": "SHIRONEKO DIGITAL",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 11,
+              "fontWeight": "normal",
+              "letterSpacing": 3
+            },
+            {
+              "type": "text",
+              "id": "pHFet",
+              "name": "wm2",
+              "fill": "$fg_muted",
+              "content": "Home   Work   Contact",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 11,
+              "fontWeight": "normal",
+              "letterSpacing": 2
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "LqoRA",
+          "width": "fill_container",
+          "fill": "$surface",
+          "gap": 56,
+          "padding": [
+            32,
+            80,
+            56,
+            80
+          ],
+          "justifyContent": "space_between",
+          "children": [
+            {
+              "type": "frame",
+              "id": "EaYQy",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 14,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "iJh1K",
+                  "fill": "$fg_muted",
+                  "content": "CASEFILES",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 11,
+                  "fontWeight": "normal",
+                  "letterSpacing": 3
+                },
+                {
+                  "type": "text",
+                  "id": "fWJtK",
+                  "fill": "$fg",
+                  "textGrowth": "fixed-width",
+                  "width": 800,
+                  "content": "Creating software that people love—shown in production.",
+                  "lineHeight": 1.05,
+                  "fontFamily": "Anton",
+                  "fontSize": 46,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "oPpCh",
+                  "fill": "$fg_muted",
+                  "textGrowth": "fixed-width",
+                  "width": 600,
+                  "content": "Delivering perfection at every level: the interfaces, services, and creator tools we’ve shipped where latency, clarity, and calm under load actually matter.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Geist",
+                  "fontSize": 16,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "CTotJ",
+              "width": 320,
+              "height": 300,
+              "stroke": {
+                "align": "inside",
+                "thickness": 1,
+                "fill": "$hairline"
+              },
+              "layout": "none"
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "ve5rr",
+          "name": "p1",
+          "width": "fill_container",
+          "fill": "$surface_raised",
+          "gap": 44,
+          "padding": [
+            52,
+            80,
+            52,
+            96
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "BoBbL",
+              "name": "img1",
+              "metadata": {
+                "type": "unsplash",
+                "username": "miha_meglic",
+                "link": "https://unsplash.com/@miha_meglic",
+                "author": "Miha Meglic"
+              },
+              "clip": true,
+              "width": 320,
+              "height": 210,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1639313521811-fdfb1c040ddb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUzOTU5MTR8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "fV3yN",
+              "name": "col1",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "VYFjm",
+                  "name": "pt1",
+                  "fill": "$fg",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "Live operations console",
+                  "fontFamily": "Anton",
+                  "fontSize": 28,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "j5Rl0",
+                  "name": "pd1",
+                  "fill": "$fg_muted",
+                  "textGrowth": "fixed-width",
+                  "width": 780,
+                  "content": "Role-based admin, moderation, and ingest paths tuned for spikes—so your team isn’t guessing when the room goes loud.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "JO2Pc",
+                  "name": "pm1",
+                  "fill": "$fg_muted",
+                  "content": "Platform · realtime · VTuber-friendly ops",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "DIhOU",
+          "name": "p2",
+          "width": "fill_container",
+          "fill": "$surface",
+          "gap": 44,
+          "padding": [
+            44,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "AaDbr",
+              "name": "col2",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "n0WRT",
+                  "name": "pt2",
+                  "fill": "$fg",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "Creator-side control deck",
+                  "fontFamily": "Anton",
+                  "fontSize": 28,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "Keixj",
+                  "name": "pd2",
+                  "fill": "$fg_muted",
+                  "textGrowth": "fixed-width",
+                  "width": 780,
+                  "content": "VTuber-focused utilities: scene helpers, asset triggers, and guardrails that keep talent focused on performance—not on clicking the wrong OBS source.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "teynW",
+                  "name": "pm2",
+                  "fill": "$fg_muted",
+                  "content": "Tools · overlays · ergonomics",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            },
+            {
+              "type": "frame",
+              "id": "YDovT",
+              "name": "img2",
+              "metadata": {
+                "type": "unsplash",
+                "username": "pramodtiwari",
+                "link": "https://unsplash.com/@pramodtiwari",
+                "author": "Pramod Tiwari"
+              },
+              "clip": true,
+              "width": 320,
+              "height": 210,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "https://images.unsplash.com/photo-1674631631051-8a3ec6355187?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NDM0ODN8MHwxfHJhbmRvbXx8fHx8fHx8fDE3NzUzOTU5MjR8&ixlib=rb-4.1.0&q=80&w=1080",
+                "mode": "fill"
+              }
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "qN5TN",
+          "name": "p3",
+          "width": "fill_container",
+          "fill": "$surface_raised",
+          "gap": 44,
+          "padding": [
+            52,
+            96,
+            52,
+            80
+          ],
+          "children": [
+            {
+              "type": "frame",
+              "id": "uJbGS",
+              "name": "img3",
+              "clip": true,
+              "width": 320,
+              "height": 210,
+              "fill": {
+                "type": "image",
+                "enabled": true,
+                "url": "./images/generated-1775395944483.png",
+                "mode": "fill"
+              }
+            },
+            {
+              "type": "frame",
+              "id": "Znp6n",
+              "name": "col3",
+              "width": "fill_container",
+              "layout": "vertical",
+              "gap": 10,
+              "children": [
+                {
+                  "type": "text",
+                  "id": "29aDM",
+                  "name": "pt3",
+                  "fill": "$fg",
+                  "textGrowth": "fixed-width",
+                  "width": 900,
+                  "content": "Spatial layer for a live IP moment",
+                  "fontFamily": "Anton",
+                  "fontSize": 28,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "7aBbZ",
+                  "name": "pd3",
+                  "fill": "$fg_muted",
+                  "textGrowth": "fixed-width",
+                  "width": 780,
+                  "content": "Tracking-aware AR pass that stayed within frame budget when cameras moved and the crowd didn’t.",
+                  "lineHeight": 1.55,
+                  "fontFamily": "Geist",
+                  "fontSize": 15,
+                  "fontWeight": "normal"
+                },
+                {
+                  "type": "text",
+                  "id": "lzWxc",
+                  "name": "pm3",
+                  "fill": "$fg_muted",
+                  "content": "AR / XR · performance budget · show run",
+                  "fontFamily": "IBM Plex Mono",
+                  "fontSize": 12,
+                  "fontWeight": "normal"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "frame",
+          "id": "e8Efu",
+          "name": "wFoot",
+          "width": "fill_container",
+          "fill": "$surface",
+          "layout": "vertical",
+          "gap": 12,
+          "padding": [
+            56,
+            80
+          ],
+          "children": [
+            {
+              "type": "text",
+              "id": "OUze4",
+              "name": "wf1",
+              "fill": "$fg_muted",
+              "content": "MORE UNDER NDA",
+              "fontFamily": "IBM Plex Mono",
+              "fontSize": 11,
+              "fontWeight": "normal",
+              "letterSpacing": 3
+            },
+            {
+              "type": "text",
+              "id": "Rzr3F",
+              "name": "wf2",
+              "fill": "$fg_muted",
+              "textGrowth": "fixed-width",
+              "width": 640,
+              "content": "Ask for a walkthrough—we’ll share the parts we can talk about.",
+              "lineHeight": 1.5,
+              "fontFamily": "Geist",
+              "fontSize": 15,
+              "fontWeight": "normal"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "variables": {
+    "accent": {
+      "type": "color",
+      "value": "#D4D4D8FF"
+    },
+    "fg": {
+      "type": "color",
+      "value": "#FFFFFFFF"
+    },
+    "fg_muted": {
+      "type": "color",
+      "value": "#A1A1AAFF"
+    },
+    "hairline": {
+      "type": "color",
+      "value": "#27272AFF"
+    },
+    "surface": {
+      "type": "color",
+      "value": "#0A0A0AFF"
+    },
+    "surface_raised": {
+      "type": "color",
+      "value": "#111111FF"
+    }
+  }
+}
